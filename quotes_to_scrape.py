@@ -30,7 +30,7 @@ def get_data():
     for quote_url in get_url():
 
         response = requests.get(quote_url, headers=headers)
-        # sleep(0)
+        sleep(0)
         soup = BeautifulSoup(response.text, "lxml")
         data = soup.find("div", class_="author-details")
         author = data.find("h3", class_="author-title").text
